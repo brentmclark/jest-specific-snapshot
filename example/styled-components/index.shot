@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test that handles serializers 1`] = `
+<div
+  className="sc-bdVaJa lpjCXg"
+>
+  <h1>
+    I am a title
+  </h1>
+</div>
+`;
