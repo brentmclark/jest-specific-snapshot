@@ -4,13 +4,18 @@
   "main": "dist/index.js",
   "scripts": {
     "example": "jest specific.napshot.test",
+    "styled-components": "jest styled-components.test",
     "babel": "babel src -d dist",
     "lint": "eslint .",
     "lint-fix": "npm run lint -- --fix",
     "prepublish": "npm run babel"
   },
   "jest": {
-    "cacheDirectory": "./.jest/cache"
+    "cacheDirectory": "./.jest/cache",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/index.js",
+    "moduleFileExtensions": [
+      "js"
+    ]
   },
   "dependencies": {
     "jest-snapshot": "^20.0.3"
@@ -21,6 +26,7 @@
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^4.3.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-config-prettier": "^2.3.0",
@@ -31,7 +37,12 @@
     "eslint-teamcity": "^1.4.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
-    "prettier": "^1.5.3"
+    "jest-styled-components": "^4.9.0",
+    "prettier": "^1.5.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0",
+    "styled-components": "^2.2.4"
   },
   "peerDependencies": {
     "jest": "^20.0.4"
