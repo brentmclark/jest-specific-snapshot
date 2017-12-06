@@ -4,7 +4,7 @@ const ignore = 0;
 
 module.exports = {
   root: true,
-  extends: ['airbnb-base', 'prettier', "plugin:jest/recommended"],
+  extends: ['airbnb-base', 'prettier', 'plugin:jest/recommended', 'plugin:react/recommended'],
   plugins: ['prettier', 'json', 'jest'],
   parser: 'babel-eslint',
   parserOptions: {
