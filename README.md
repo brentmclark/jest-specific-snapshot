@@ -1,6 +1,6 @@
 # Jest Specific Snapshot #
 
-TBD
+Jest matcher for multiple snapshot files per test
 
 # Installation #
 
@@ -28,9 +28,24 @@ test('test', () => {
 });
 ```
 
+## With Custom Serializer ##
+
+```js
+const path = require('path');
+// extend jest to have 'toMatchSpecificSnapshot' matcher
+const addSerializer = require('jest-specifics-snapshot').addSerializer;
+
+addSerializer(/* Add custom serializer here */);
+
+test('test', () => {
+  // another snapshot file in the same test
+  expect(/* thing that matches the custom serializer */).toMatchSpecificSnapshot('./specific/custom_serializer/test.shot');
+});
+``` 
+
 # Limitations # 
 
 1. Snapshot files should have an extension **other** than `.snap`, since it conflicts with jest.
 2. In order to handle the `--updateSnapshot` (`-u`) parameter provided from CLI, there is an abuse of the `SnapshotState._updateSnapshot` private field. TBD - try to use the `globalConfig` to get this state. 
-3. `.toMatchSpecificSnapshot` does ignore serializers. It means that you cannot run with e.g. `jest-styled-components` and similar that make use of `expect.addSnapshotSerializer`.
+3. `.toMatchSpecificSnapshot` does ignore a custom serializers strategy. In order to support custom serializers, you should use the `addSerializer` method explicitly.
 4. TBD

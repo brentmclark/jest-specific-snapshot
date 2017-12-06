@@ -1,7 +1,6 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_updateSnapshot"] }] */
 import path from 'path';
-import { SnapshotState, toMatchSnapshot } from 'jest-snapshot';
-import { serialize } from 'jest-snapshot/build/utils';
+import { SnapshotState, toMatchSnapshot, addSerializer } from 'jest-snapshot';
 
 const snapshotsStateMap = new Map();
 
@@ -45,3 +44,5 @@ expect.extend({
     return patchedToMatchSnapshot(serializedRecieved);
   },
 });
+
+export { addSerializer };
