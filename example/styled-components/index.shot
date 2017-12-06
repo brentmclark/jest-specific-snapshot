@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test that handles serializers 1`] = `
+.c0 {
+  color: green;
+}
+
 <div
-  className="sc-bdVaJa lpjCXg"
+  className="c0"
 >
   <h1>
     I am a title
