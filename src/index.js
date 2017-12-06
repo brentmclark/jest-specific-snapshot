@@ -39,9 +39,8 @@ expect.extend({
 
     const newThis = Object.assign({}, this, { snapshotState });
     const patchedToMatchSnapshot = toMatchSnapshot.bind(newThis);
-    const serializedRecieved = serialize(received);
 
-    return patchedToMatchSnapshot(serializedRecieved);
+    return patchedToMatchSnapshot(received);
   },
 });
 
